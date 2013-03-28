@@ -31,6 +31,11 @@ LOCAL_MODULE:= libpower
 
 LOCAL_SRC_FILES += power/power.c
 
+# product is "apollo-mele"
+ifeq ($(PRODUCT_CODE), apollo-mele)   
+  LOCAL_CFLAGS += -DPRODUCT_IS_APOLLO_MELE
+endif
+
 include $(BUILD_STATIC_LIBRARY)
 
 # shared library for various HALs
@@ -41,6 +46,13 @@ LOCAL_MODULE := libpower
 LOCAL_SRC_FILES := power/power.c
 
 LOCAL_SHARED_LIBRARIES := libcutils
+
+
+# product is "apollo-mele"
+ifeq ($(PRODUCT_CODE), apollo-mele)
+  LOCAL_CFLAGS += -DPRODUCT_IS_APOLLO_MELE
+endif
+
 
 include $(BUILD_SHARED_LIBRARY)
 

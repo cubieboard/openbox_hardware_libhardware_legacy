@@ -1875,6 +1875,9 @@ uint32_t AudioPolicyManagerBase::getDeviceForInputSource(int inputSource)
     case AUDIO_SOURCE_VOICE_CALL:
         device = AudioSystem::DEVICE_IN_VOICE_CALL;
         break;
+	case AUDIO_SOURCE_WIFI_DISPLAY:
+		device = AudioSystem::DEVICE_IN_WIFI_DISPLAY;
+		break;
     default:
         LOGW("getDeviceForInputSource() invalid input source %d", inputSource);
         device = 0;
